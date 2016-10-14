@@ -1,1 +1,1 @@
-# spotify-app
+# Spotify app
