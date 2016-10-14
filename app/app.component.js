@@ -13,7 +13,12 @@ var spotify_service_1 = require('./artists/spotify.service');
 require('rxjs/Rx');
 var AppComponent = (function () {
     function AppComponent() {
+        this.artist = 'Lady';
     }
+    AppComponent.prototype.onKeyup = function (e) {
+        console.log(e.target.value);
+        this.artist = e.target.value;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',

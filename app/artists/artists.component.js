@@ -16,21 +16,47 @@ var ArtistComponent = (function () {
         this.dataService = dataService;
         this.artists = [];
         this.items = 10;
+        this.name = 'Maroon 5';
+        this.artistValue = 'Maroon 5';
+        this.artistChange = new core_1.EventEmitter();
     }
     ArtistComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.dataService
-            .fetchArtists('Marron', this.items)
+            .fetchArtists(this.name, this.items)
             .subscribe(function (response) { return _this.artists = response.artists.items; });
+    };
+    ArtistComponent.prototype.change = function (e) {
+        var _this = this;
+        this.dataService
+            .fetchArtists(e.target.value, this.items)
+            .subscribe(function (response) { return _this.artists = response.artists.items; });
+        console.log(this.artistValue);
+        this.artistChange.emit({
+            value: e.target.value
+        });
     };
     __decorate([
         core_1.Input("items"), 
         __metadata('design:type', Object)
     ], ArtistComponent.prototype, "items", void 0);
+    __decorate([
+        core_1.Input("name"), 
+        __metadata('design:type', String)
+    ], ArtistComponent.prototype, "name", void 0);
+    __decorate([
+        core_1.Input("artistValue"), 
+        __metadata('design:type', String)
+    ], ArtistComponent.prototype, "artistValue", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ArtistComponent.prototype, "artistChange", void 0);
     ArtistComponent = __decorate([
         core_1.Component({
             selector: 'artist',
-            templateUrl: globals.url + '/' + globals.appUri + '/artists/artists.component.tpl.html',
+            templateUrl: globals.appUri + '/artists/templates/artists.component.tpl.html',
+            styleUrls: ['app/artists/styles/artists.components.css',],
         }), 
         __metadata('design:paramtypes', [spotify_service_1.SpotifyService])
     ], ArtistComponent);

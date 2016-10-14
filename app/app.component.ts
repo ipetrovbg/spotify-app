@@ -13,5 +13,10 @@ import 'rxjs/Rx';
 })
 
 export class AppComponent {
-  
+  public artist: string  = 'Lady';
+
+  onKeyup(e){
+  	console.log(e.target.value);
+  	this.artist = e.target.value;
+  }
 }

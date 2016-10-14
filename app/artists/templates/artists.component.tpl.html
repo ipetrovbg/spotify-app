@@ -1,0 +1,13 @@
+<div>
+	<input type="text" [(ngModel)]="name">
+</div>
+<ul class="artists-component">
+    <li *ngFor="let artist of artists">
+    	<div class="artists-container">    	
+	        <p>{{ artist.name }}</p>
+	        <div class="image-artist-container" *ngIf="artist.images[0] !== 'undefined'">
+	        	<img [src]="artist.images[0].url" [alt]="artist.name">
+	        </div>
+        </div>
+    </li>
+</ul>

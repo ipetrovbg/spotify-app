@@ -1,2 +1,2 @@
 <h1>Ng2 App</h1>
-<artist items="5"></artist>
+<artist (change)="onKeyup($event)" [artistValue]="artist" name="{{ artist }}" items="5"></artist>
