@@ -9,7 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var spotify_service_1 = require('../services/spotify.service');
+var spotify_service_1 = require('./spotify.service');
+var globals = require('../globals');
 var ArtistComponent = (function () {
     function ArtistComponent(dataService) {
         this.dataService = dataService;
@@ -29,7 +30,7 @@ var ArtistComponent = (function () {
     ArtistComponent = __decorate([
         core_1.Component({
             selector: 'artist',
-            templateUrl: './app/artists/artists.component.tpl.html',
+            templateUrl: globals.url + '/' + globals.appUri + '/artists/artists.component.tpl.html',
         }), 
         __metadata('design:paramtypes', [spotify_service_1.SpotifyService])
     ], ArtistComponent);

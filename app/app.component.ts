@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { Http, Response, HttpModule }    from '@angular/http';
 import { Observable } from 'rxjs';
 import { ArtistComponent } from './artists/artists.component';
-import { SpotifyService } from './services/spotify.service';
+import { SpotifyService } from './artists/spotify.service';
 import 'rxjs/Rx';
+
 
 @Component({
   selector: 'app',

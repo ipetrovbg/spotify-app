@@ -1,15 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SpotifyService } from '../services/spotify.service';
+import { SpotifyService } from './spotify.service';
 import { FormsModule } from '@angular/forms';
+import globals = require('../globals');
 @Component({
     selector: 'artist',
-    templateUrl: './app/artists/artists.component.tpl.html',
+    templateUrl: globals.url + '/' + globals.appUri + '/artists/artists.component.tpl.html',
 })
 
 export class ArtistComponent implements OnInit {
-    constructor(private dataService: SpotifyService) {
-
-    }
+    constructor(private dataService: SpotifyService) {}
 
     public artists = [];
 

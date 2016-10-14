@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var spotify_service_1 = require('./services/spotify.service');
+var spotify_service_1 = require('./artists/spotify.service');
 require('rxjs/Rx');
 var AppComponent = (function () {
     function AppComponent() {
