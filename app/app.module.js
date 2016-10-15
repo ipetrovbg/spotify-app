@@ -13,14 +13,16 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var artists_component_1 = require('./artists/artists.component');
+var search_box_component_1 = require('./search-box/search-box.component');
 var forms_1 = require('@angular/forms');
+var filter_pipe_1 = require('./artists/filter.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, artists_component_1.ArtistComponent],
+            declarations: [app_component_1.AppComponent, artists_component_1.ArtistComponent, search_box_component_1.SearchBox, filter_pipe_1.HasImage],
             bootstrap: [app_component_1.AppComponent],
             providers: [],
         }), 

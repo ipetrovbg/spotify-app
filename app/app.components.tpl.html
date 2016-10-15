@@ -1,2 +1,12 @@
-<h1>Ng2 App</h1>
-<artist (change)="onKeyup($event)" [artistValue]="artist" name="{{ artist }}" items="5"></artist>
+<h1>Spotify App</h1>
+<search-box 
+        placeholder="Search Artist" 
+        width="20%" 
+        padding="10"
+        borderColor="#5757CF"
+        [searchQuery]="artist"
+        (searchChange)="onKeyup($event)"
+        (afterClear)="afterClearQuery($event)"
+      ></search-box>
+
+<artist [artists]="artists" name="{{ artist }}"></artist>

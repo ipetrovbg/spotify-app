@@ -1,7 +1,6 @@
 .artists-component {
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 0;
 }
 .artists-component li {
   list-style-type: none;
@@ -38,10 +37,7 @@
 .artists-component li div.image-artist-container {
   height: 200px;
   overflow-x: hidden;
-  display: flex;
-  justify-content: center;
 }
 .artists-component li div.image-artist-container img {
-  flex: 0;
-  height: 100%;
+  width: 150px;
 }

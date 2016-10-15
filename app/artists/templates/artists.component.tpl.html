@@ -1,11 +1,10 @@
 <div>
-	<input type="text" [(ngModel)]="name">
 </div>
 <ul class="artists-component">
-    <li *ngFor="let artist of artists">
+    <li *ngFor="let artist of artists | hasImage">
     	<div class="artists-container">    	
 	        <p>{{ artist.name }}</p>
-	        <div class="image-artist-container" *ngIf="artist.images[0] !== 'undefined'">
+	        <div class="image-artist-container" *ngIf="artist.images.length">
 	        	<img [src]="artist.images[0].url" [alt]="artist.name">
 	        </div>
         </div>
