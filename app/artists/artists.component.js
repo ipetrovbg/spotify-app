@@ -32,7 +32,6 @@ var ArtistComponent = (function () {
             selector: 'artist',
             templateUrl: globals.appUri + '/artists/templates/artists.component.tpl.html',
             styleUrls: ['app/artists/styles/artists.components.css',],
-            outputs: ['artistChange:change']
         }), 
         __metadata('design:paramtypes', [])
     ], ArtistComponent);

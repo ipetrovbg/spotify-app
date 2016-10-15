@@ -6,7 +6,6 @@ import globals = require('../globals');
     selector: 'artist',
     templateUrl: globals.appUri + '/artists/templates/artists.component.tpl.html',
     styleUrls: ['app/artists/styles/artists.components.css',],
-    outputs: ['artistChange:change']
 })
 
 export class ArtistComponent {

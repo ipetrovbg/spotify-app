@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ArtistComponent } from './artists/artists.component';
 import { SpotifyService } from './services/spotify.service';
 import { SearchBox } from './search-box/search-box.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import 'rxjs/Rx';
 
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit  {
 	public artist: string  = 'Lady Gaga';
 	private items: number = 4;
 	public artists = [];
-
+	public errorMessage: string;
 	ngOnInit() {
 	    this.dataService
 	        .fetchArtists(this.artist, this.items)
@@ -35,7 +36,8 @@ export class AppComponent implements OnInit  {
 			this.dataService
 		        .fetchArtists(e.value, this.items)
 		       .subscribe(
-		           (response) => this.artists = response.artists.items || [{name: "no data", images: [{},{}]}]
+		           (response) => this.artists = response.artists.items || [{name: "no data", images: [{},{}]}],
+		           (error) => this.errorMessage = error
 		       );
 		}, 100);
 	}

@@ -30,7 +30,7 @@ var AppComponent = (function () {
         setTimeout(function () {
             _this.dataService
                 .fetchArtists(e.value, _this.items)
-                .subscribe(function (response) { return _this.artists = response.artists.items || [{ name: "no data", images: [{}, {}] }]; });
+                .subscribe(function (response) { return _this.artists = response.artists.items || [{ name: "no data", images: [{}, {}] }]; }, function (error) { return _this.errorMessage = error; });
         }, 100);
     };
     AppComponent.prototype.onKeyup = function (e) {

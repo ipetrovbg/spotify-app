@@ -1,6 +1,7 @@
 import { Component, Input, NgModule,  Output, EventEmitter, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
     selector: 'search-box',
@@ -13,6 +14,7 @@ import { FormsModule }   from '@angular/forms';
             (keyup)="onKey($event)"
             [style.padding]="padding"
             [style.borderColor]="borderColor"
+            [formControl]="term"
             placeholder="{{ text }}">
         <button 
             (click)="onClear()"
@@ -32,16 +34,20 @@ export class SearchBox implements OnInit {
     showClearBtn = false;
     @Output() searchChange = new EventEmitter();
     @Output() afterClear = new EventEmitter();
+    term = new FormControl();
     ngOnInit(){
         if(this.searchQuery.length > 0){
             this.showClearBtn = true;
         }
     }
     onKey(event:any) {
-                
-      this.searchChange.emit({
-        value: this.searchQuery
-      });
+      this.term.valueChanges
+            .debounceTime(400)
+            .subscribe(
+                term =>  this.searchChange.emit({
+                    value: this.searchQuery
+                })
+            );
       setTimeout(() => {
             if(event.target.value.length > 0){
                 this.showClearBtn = true;

@@ -6,8 +6,9 @@ import { ArtistComponent } from './artists/artists.component';
 import { SearchBox } from './search-box/search-box.component';
 import {FormsModule} from '@angular/forms';
 import { HasImage } from './artists/filter.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, FormsModule ],
+  imports:      [ BrowserModule, HttpModule, FormsModule, ReactiveFormsModule ],
   declarations: [ AppComponent, ArtistComponent, SearchBox, HasImage ],
   bootstrap:    [ AppComponent ],
   providers:    [],

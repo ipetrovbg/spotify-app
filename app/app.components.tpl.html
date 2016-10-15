@@ -9,4 +9,4 @@
         (afterClear)="afterClearQuery($event)"
       ></search-box>
 
-<artist [artists]="artists" name="{{ artist }}"></artist>
+<artist *ngIf="!errorMessage" [artists]="artists" name="{{ artist }}"></artist>
