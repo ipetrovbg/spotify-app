@@ -1,6 +1,6 @@
 # Spotify app
 
-```github
+```js
 git clone https://github.com/ipetrovbg/spotify-app.git
 cd spotify-app
 npm install
