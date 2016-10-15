@@ -1,0 +1,16 @@
+<div class="search-box-component"
+        [style.width]="width"        
+    >
+        <input 
+            [(ngModel)]="searchQuery"
+            (keyup)="onKey($event)"
+            [style.padding]="padding"
+            [style.borderColor]="borderColor"
+            [formControl]="term"
+            placeholder="{{ text }}">
+        <button
+            (click)="onClear()"
+            *ngIf="showClearBtn && !showOnTypeing"
+            [style.padding]="padding">x</button>
+            <div *ngIf="showOnTypeing" class="search-box-loading"></div>
+    </div>

@@ -16,10 +16,11 @@ var SearchBox = (function () {
         this.width = '100%';
         this.borderColor = 'black';
         this.padding = 5;
-        this.showClearBtn = false;
         this.searchChange = new core_1.EventEmitter();
         this.afterClear = new core_1.EventEmitter();
         this.term = new forms_1.FormControl();
+        this.showClearBtn = false;
+        this.showOnTypeing = false;
     }
     SearchBox.prototype.ngOnInit = function () {
         if (this.searchQuery.length > 0) {
@@ -28,11 +29,15 @@ var SearchBox = (function () {
     };
     SearchBox.prototype.onKey = function (event) {
         var _this = this;
+        this.showOnTypeing = true;
         this.term.valueChanges
-            .debounceTime(400)
-            .subscribe(function (term) { return _this.searchChange.emit({
-            value: _this.searchQuery
-        }); });
+            .debounceTime(500)
+            .subscribe(function (term) {
+            _this.showOnTypeing = false;
+            return _this.searchChange.emit({
+                value: _this.searchQuery
+            });
+        });
         setTimeout(function () {
             if (event.target.value.length > 0) {
                 _this.showClearBtn = true;
@@ -79,7 +84,7 @@ var SearchBox = (function () {
     SearchBox = __decorate([
         core_1.Component({
             selector: 'search-box',
-            template: "\n    <div class=\"search-box-component\"\n        [style.width]=\"width\"        \n    >\n        <input \n            [(ngModel)]=\"searchQuery\"\n            (keyup)=\"onKey($event)\"\n            [style.padding]=\"padding\"\n            [style.borderColor]=\"borderColor\"\n            [formControl]=\"term\"\n            placeholder=\"{{ text }}\">\n        <button \n            (click)=\"onClear()\"\n            *ngIf=\"showClearBtn\"\n            [style.padding]=\"padding\">x</button>\n    </div>\n  ",
+            templateUrl: './app/search-box/search-box-tmpl.html',
             styleUrls: ['./app/search-box/css/search-box.min.css'],
         }), 
         __metadata('design:paramtypes', [])

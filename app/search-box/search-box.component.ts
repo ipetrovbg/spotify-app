@@ -5,23 +5,7 @@ import { ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
     selector: 'search-box',
-    template: `
-    <div class="search-box-component"
-        [style.width]="width"        
-    >
-        <input 
-            [(ngModel)]="searchQuery"
-            (keyup)="onKey($event)"
-            [style.padding]="padding"
-            [style.borderColor]="borderColor"
-            [formControl]="term"
-            placeholder="{{ text }}">
-        <button 
-            (click)="onClear()"
-            *ngIf="showClearBtn"
-            [style.padding]="padding">x</button>
-    </div>
-  `,
+    templateUrl: './app/search-box/search-box-tmpl.html',
     styleUrls: ['./app/search-box/css/search-box.min.css'],
 })
 export class SearchBox implements OnInit {
@@ -31,24 +15,30 @@ export class SearchBox implements OnInit {
     @Input('borderColor') borderColor = 'black';
     @Input('padding') padding = 5;
     @Input("searchQuery") searchQuery : string;
-    showClearBtn = false;
+    
     @Output() searchChange = new EventEmitter();
     @Output() afterClear = new EventEmitter();
-    term = new FormControl();
+
+    public term = new FormControl();
+    public showClearBtn: boolean = false;
+    public showOnTypeing: boolean = false;
+    
     ngOnInit(){
         if(this.searchQuery.length > 0){
             this.showClearBtn = true;
         }
     }
     onKey(event:any) {
-      this.term.valueChanges
-            .debounceTime(400)
-            .subscribe(
-                term =>  this.searchChange.emit({
-                    value: this.searchQuery
-                })
-            );
-      setTimeout(() => {
+        this.showOnTypeing = true;
+        this.term.valueChanges
+            .debounceTime(500)
+            .subscribe( term => {
+                this.showOnTypeing = false;
+                    return this.searchChange.emit({
+                        value: this.searchQuery
+                    })
+                });
+        setTimeout(() => {
             if(event.target.value.length > 0){
                 this.showClearBtn = true;
             }else{

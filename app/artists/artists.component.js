@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var globals = require('../globals');
 var ArtistComponent = (function () {
     function ArtistComponent() {
         this.name = 'Maroon 5';
@@ -30,8 +29,8 @@ var ArtistComponent = (function () {
     ArtistComponent = __decorate([
         core_1.Component({
             selector: 'artist',
-            templateUrl: globals.appUri + '/artists/templates/artists.component.tpl.html',
-            styleUrls: ['app/artists/styles/artists.components.css',],
+            templateUrl: './app/artists/templates/artists.component.tpl.html',
+            styleUrls: ['./app/artists/styles/artists.components.css',],
         }), 
         __metadata('design:paramtypes', [])
     ], ArtistComponent);

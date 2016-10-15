@@ -18,11 +18,13 @@ import 'rxjs/Rx';
 
 export class AppComponent implements OnInit  {
 	constructor(private dataService: SpotifyService) {}
+	
 	/* set some default values */
-	public artist: string  = 'Lady Gaga';
-	private items: number = 4;
-	public artists = [];
+	public artist: string  	= 'Lady Gaga';
 	public errorMessage: string;
+	private items: number 	= 4;
+	public artists:string[] = [];
+
 	ngOnInit() {
 	    this.dataService
 	        .fetchArtists(this.artist, this.items)
