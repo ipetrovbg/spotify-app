@@ -2,8 +2,8 @@
 ##### Angular 2 aplication
 ## Dependencies
 ``
-git
-nodejs
+git,
+nodejs,
 typescript
 ``
 ```js
