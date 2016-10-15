@@ -1,4 +1,5 @@
-# Spotify app ### Angular 2
+# Spotify app 
+### Angular 2
 ## Dependencies
 ``
 git
