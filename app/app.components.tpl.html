@@ -1,12 +1,7 @@
-<h1>Spotify App</h1>
-<search-box 
-        placeholder="Search Artist" 
-        width="50%" 
-        padding="10"
-        borderColor="#5757CF"
-        [searchQuery]="artist"
-        (searchChange)="onKeyup($event)"
-        (afterClear)="afterClearQuery($event)"
-      ></search-box>
-<p *ngIf="errorMessage">{{ errorMessage }}</p>
-<artist *ngIf="!errorMessage" [artists]="artists" name="{{ artist }}"></artist>
+<nav>
+	<ul>
+		<li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+		<li> <a routerLink="/modal" routerLinkActive="active">Modal</a></li>
+	</ul>
+</nav>
+<router-outlet></router-outlet>

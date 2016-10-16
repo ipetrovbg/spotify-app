@@ -29,8 +29,9 @@ var ArtistComponent = (function () {
     ArtistComponent = __decorate([
         core_1.Component({
             selector: 'artist',
-            templateUrl: './app/artists/templates/artists.component.tpl.html',
-            styleUrls: ['./app/artists/styles/artists.components.css',],
+            moduleId: module.id,
+            templateUrl: 'templates/artists.component.tpl.html',
+            styleUrls: ['styles/artists.components.css',],
         }), 
         __metadata('design:paramtypes', [])
     ], ArtistComponent);

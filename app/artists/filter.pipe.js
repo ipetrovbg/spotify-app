@@ -14,7 +14,10 @@ var HasImage = (function () {
         this.newData = [];
     }
     HasImage.prototype.transform = function (value) {
-        return value.filter(function (item) { return item.images.length > 0; });
+        return value.filter(function (item) {
+            item.state = 'inactive';
+            return (item.images.length > 0);
+        });
     };
     ;
     HasImage = __decorate([

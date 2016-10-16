@@ -1,8 +1,10 @@
 <div>
 </div>
 <ul class="artists-component">
-    <li *ngFor="let artist of artists | hasImage">
-    	<div class="artists-container">    	
+    <li
+	*ngFor="let artist of artists | hasImage; let i = index ">
+    	<div 
+		class="artists-container">
 	        <p>{{ artist.name }}</p>
 	        <div class="image-artist-container" *ngIf="artist.images.length">
 	        	<img [src]="artist.images[0].url" [alt]="artist.name">

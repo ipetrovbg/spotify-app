@@ -2,11 +2,12 @@ import { Component, Input, NgModule,  Output, EventEmitter, OnInit } from '@angu
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
-
+declare const module;
 @Component({
     selector: 'search-box',
-    templateUrl: './app/search-box/search-box-tmpl.html',
-    styleUrls: ['./app/search-box/css/search-box.min.css'],
+    moduleId: module.id,
+    templateUrl: 'search-box-tmpl.html',
+    styleUrls: ['css/search-box.min.css'],
 })
 export class SearchBox implements OnInit {
 

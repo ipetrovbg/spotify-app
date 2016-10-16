@@ -17,13 +17,29 @@ var search_box_component_1 = require('./search-box/search-box.component');
 var forms_1 = require('@angular/forms');
 var filter_pipe_1 = require('./artists/filter.pipe');
 var forms_2 = require('@angular/forms');
+var modal_1 = require('./modal/modal');
+var router_1 = require('@angular/router');
+var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
+var home_component_1 = require('./home/home.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
-            declarations: [app_component_1.AppComponent, artists_component_1.ArtistComponent, search_box_component_1.SearchBox, filter_pipe_1.HasImage],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, forms_2.ReactiveFormsModule,
+                ng_bootstrap_1.NgbModule.forRoot(),
+                router_1.RouterModule.forRoot([
+                    { path: 'modal', component: modal_1.Ng2Modal },
+                    { path: 'home', component: home_component_1.HomeComponent },
+                    { path: '', component: home_component_1.HomeComponent },
+                    {
+                        path: '**',
+                        redirectTo: '/home',
+                        pathMatch: 'full'
+                    },
+                ])
+            ],
+            declarations: [app_component_1.AppComponent, artists_component_1.ArtistComponent, search_box_component_1.SearchBox, filter_pipe_1.HasImage, modal_1.Ng2Modal, home_component_1.HomeComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [],
         }), 

@@ -84,8 +84,9 @@ var SearchBox = (function () {
     SearchBox = __decorate([
         core_1.Component({
             selector: 'search-box',
-            templateUrl: './app/search-box/search-box-tmpl.html',
-            styleUrls: ['./app/search-box/css/search-box.min.css'],
+            moduleId: module.id,
+            templateUrl: 'search-box-tmpl.html',
+            styleUrls: ['css/search-box.min.css'],
         }), 
         __metadata('design:paramtypes', [])
     ], SearchBox);
