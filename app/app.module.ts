@@ -6,7 +6,7 @@ import { ArtistComponent } from './artists/artists.component';
 import { SearchBox } from './search-box/search-box.component';
 import {FormsModule} from '@angular/forms';
 import { HasImage } from './artists/filter.pipe';
-import { Shorter } from './filters/shorter.pipe';
+import { Shorter } from './pipes/shorter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2Modal } from './modal/modal';
 import { RouterModule }   from '@angular/router';

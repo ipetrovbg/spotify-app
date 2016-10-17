@@ -2,7 +2,7 @@ import { Component, Input,  Output, EventEmitter, trigger, state, style, transit
 import { FormsModule } from '@angular/forms';
 import { HasImage } from './filter.pipe';
 import globals = require('../globals');
-import { Shorter } from '../filters/shorter.pipe';
+import { Shorter } from '../pipes/shorter.pipe';
 declare const module;
 @Component({
     selector: 'artist',
