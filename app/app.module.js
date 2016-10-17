@@ -16,6 +16,7 @@ var artists_component_1 = require('./artists/artists.component');
 var search_box_component_1 = require('./search-box/search-box.component');
 var forms_1 = require('@angular/forms');
 var filter_pipe_1 = require('./artists/filter.pipe');
+var shorter_pipe_1 = require('./filters/shorter.pipe');
 var forms_2 = require('@angular/forms');
 var modal_1 = require('./modal/modal');
 var router_1 = require('@angular/router');
@@ -39,7 +40,7 @@ var AppModule = (function () {
                     },
                 ])
             ],
-            declarations: [app_component_1.AppComponent, artists_component_1.ArtistComponent, search_box_component_1.SearchBox, filter_pipe_1.HasImage, modal_1.Ng2Modal, home_component_1.HomeComponent],
+            declarations: [app_component_1.AppComponent, artists_component_1.ArtistComponent, search_box_component_1.SearchBox, filter_pipe_1.HasImage, shorter_pipe_1.Shorter, modal_1.Ng2Modal, home_component_1.HomeComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [],
         }), 

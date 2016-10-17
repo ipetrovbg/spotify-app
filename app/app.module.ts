@@ -6,11 +6,13 @@ import { ArtistComponent } from './artists/artists.component';
 import { SearchBox } from './search-box/search-box.component';
 import {FormsModule} from '@angular/forms';
 import { HasImage } from './artists/filter.pipe';
+import { Shorter } from './filters/shorter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Ng2Modal } from './modal/modal';
 import { RouterModule }   from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule, ReactiveFormsModule,
   NgbModule.forRoot(),
@@ -25,7 +27,7 @@ import { HomeComponent } from './home/home.component';
       },
     ])
     ],
-  declarations: [ AppComponent, ArtistComponent, SearchBox, HasImage, Ng2Modal, HomeComponent ],
+  declarations: [ AppComponent, ArtistComponent, SearchBox, HasImage, Shorter, Ng2Modal, HomeComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [],
 })

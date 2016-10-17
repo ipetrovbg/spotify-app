@@ -34,7 +34,7 @@ var HomeComponent = (function () {
                 .fetchArtists(e.value, _this.items)
                 .subscribe(function (response) {
                 _this.loader = false;
-                _this.artists = response.artists.items || [{ name: "no data", images: [{}, {}] }];
+                _this.artists = response.artists.items || [{ name: "no data", images: [{}] }];
             }, function (error) {
                 _this.loader = false;
                 _this.errorMessage = error;

@@ -5,7 +5,7 @@
 	*ngFor="let artist of artists | hasImage; let i = index ">
     	<div 
 		class="artists-container">
-	        <p>{{ artist.name }}</p>
+	        <p>{{ artist.name | shorter:40 : '...' }}</p>
 	        <div class="image-artist-container" *ngIf="artist.images.length">
 	        	<img [src]="artist.images[0].url" [alt]="artist.name">
 	        </div>

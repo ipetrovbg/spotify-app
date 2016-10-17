@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit{
 				.subscribe(
 				(response) => {
 					this.loader = false;
-					this.artists = response.artists.items || [{ name: "no data", images: [{}, {}] }]
+					this.artists = response.artists.items || [{ name: "no data", images: [{}]}]
 				},
 				(error) => {
 					this.loader = false;
